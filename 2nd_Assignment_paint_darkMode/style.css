@@ -19,7 +19,7 @@ body {
     border-radius: 20px;
     width: 1000px;
     height: 1000px;
-    border: 5px solid palevioletred;
+    border: 5px solid rgb(4, 0, 255);
     margin-bottom: 5px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 }
@@ -38,7 +38,7 @@ body {
     cursor: pointer;
 }
 
-button {
+.reset_btn {
     outline: none;
     background-color: white;
     border-radius: 50%;
@@ -46,7 +46,19 @@ button {
     box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 }
 
-button:active {
+.reset_btn:active {
     transform: scale(1.1);
     transition: transform 0.2s ease-out;
+}
+
+.mode_bnt {
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.dark_mode {
+    background-color: black;
+    color: white;
 }

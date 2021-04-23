@@ -1,7 +1,7 @@
-const canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
-const colors = document.querySelectorAll(".paint_color");
-const resetBnt = document.querySelector("button");
+const canvas = document.querySelector(".canvas"),
+    ctx = canvas.getContext("2d"),
+    colors = document.querySelectorAll(".paint_color"),
+    resetBnt = document.querySelector("button");
 
 const CANVAS_SIZE = 700;
 
@@ -9,12 +9,12 @@ canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
 ctx.lineWidth = 3;
-// ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
 resetBnt.addEventListener("click", (event) => {
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 });
-
 
 let painting = false;
 
