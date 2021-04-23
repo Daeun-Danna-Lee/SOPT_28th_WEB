@@ -5,6 +5,17 @@ const digitalTime = document.querySelector(".digital_time"),
     analogMinute = document.querySelector(".analog_minute"),
     analogSecond = document.querySelector(".analog_second");
 
+let hour24 = false;
+
+const changeTime = () => {
+    if (hour24) {
+        hour24 = false;
+    } else {
+        hour24 = true;
+        digitalButton.innerHTML = "24H";
+    }
+};
+
 // 00 : 00의 형식을 맞추기 위해 한자리 수는 앞에 0을 채워주는 함수입니다
 const fillZero = (num) => {
     num = num + ""; // 문자열로 변환
@@ -42,12 +53,14 @@ const getTime = () => {
     ];
     month = monthList[month];
 
-    if (hour >= 0 && hour <= 11) {
-        if (hour === 0) hour = 12;
-        digitalButton.innerHTML = "AM";
-    } else {
-        if (hour >= 13) hour -= 12;
-        digitalButton.innerHTML = "PM";
+    if (!hour24) {
+        if (hour >= 0 && hour <= 11) {
+            if (hour === 0) hour = 12;
+            digitalButton.innerHTML = "AM";
+        } else {
+            if (hour >= 13) hour -= 12;
+            digitalButton.innerHTML = "PM";
+        }
     }
 
     return { year, month, day, hour, minute, second };
@@ -71,14 +84,15 @@ const drawTime = () => {
 
     header.innerHTML = `Today is <span>${day} ${month}</span>, ${year}`;
     digitalTime.innerHTML = `${fillZero(hour)} : ${fillZero(minute)} : ${fillZero(
-    second
-  )}`;
+  second
+)}`;
 
     drawClock(hour, minute, second);
 };
 
 const init = () => {
     setInterval(drawTime, 1000);
+    digitalButton.addEventListener("click", changeTime);
 };
 
 init();
