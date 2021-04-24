@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hello() {
+function Hello({soptPart, be}) {
 
     const name = {
         first: "Daeun",
@@ -11,6 +11,8 @@ function Hello() {
         color: "red",
         backgroundColor: "skyblue",
     };
+
+    const soptPart;
 
     const imgURL = "cat.png";
 
