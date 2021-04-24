@@ -1,25 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Hello({props}) {
 
-    const name = {
-        first: "Daeun",
-        last: "Lee",
-    };
+    const [count, setCount] = useState(0);
+    // 혹은 useState를 import 해오지 않고 React.useState(0) 이라고 써도 됨
 
-    const style = {
-        color: "yellow",
-        backgroundColor: "skyblue",
-    };
-
-    // const soptPart = "";
-
-    const imgURL = "cat.png";
+    function useState(initalValue) {
+        let count = initalValue;
+        function getCount() {
+            return _count;
+        }
+        function setCount(newValue) {
+            _count = newValue;
+        }
+    }
 
     return (
         <>
-            <h1 style={style}>Hello, {props.soptPart} {name.first}</h1>
-            <img src={imgURL} alt="" />
+            <h1>Hello</h1>
         </>
     )
 }
