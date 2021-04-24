@@ -12,9 +12,12 @@ function Hello() {
         backgroundColor: "skyblue",
     };
 
+    const imgURL = "cat.png";
+
     return (
         <>
             <h1 style={{color: "green", backgroundColor: "yellow"}}>Hello, {name.first}</h1>
+            <img src={imgURL} alt="" />
         </>
     )
 }
