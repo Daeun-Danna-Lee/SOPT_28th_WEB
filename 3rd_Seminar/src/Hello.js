@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hello({soptPart, be}) {
+function Hello({soptPart}) {
 
     const name = {
         first: "Daeun",
@@ -12,13 +12,13 @@ function Hello({soptPart, be}) {
         backgroundColor: "skyblue",
     };
 
-    const soptPart;
+    // const soptPart = "";
 
     const imgURL = "cat.png";
 
     return (
         <>
-            <h1 style={style}>Hello, {name.first}</h1>
+            <h1 style={style}>Hello, {soptPart} {name.first}</h1>
             <img src={imgURL} alt="" />
         </>
     )
