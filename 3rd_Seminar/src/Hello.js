@@ -16,7 +16,7 @@ function Hello() {
 
     return (
         <>
-            <h1 style={{color: "green", backgroundColor: "yellow"}}>Hello, {name.first}</h1>
+            <h1 style={style}>Hello, {name.first}</h1>
             <img src={imgURL} alt="" />
         </>
     )
