@@ -10,6 +10,7 @@ function App() {
     <>
     {/* name이라는 이름으로 userName을 Hello 컴포넌트에 전달 */}
       <Hello soptPart={sopt} />  
+      <Hello name={userName} />
     </>
   )
 }

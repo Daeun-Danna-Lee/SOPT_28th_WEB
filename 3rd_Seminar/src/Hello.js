@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hello({soptPart}) {
+function Hello({props}) {
 
     const name = {
         first: "Daeun",
@@ -8,7 +8,7 @@ function Hello({soptPart}) {
     };
 
     const style = {
-        color: "red",
+        color: "yellow",
         backgroundColor: "skyblue",
     };
 
@@ -18,7 +18,7 @@ function Hello({soptPart}) {
 
     return (
         <>
-            <h1 style={style}>Hello, {soptPart} {name.first}</h1>
+            <h1 style={style}>Hello, {props.soptPart} {name.first}</h1>
             <img src={imgURL} alt="" />
         </>
     )
