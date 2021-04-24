@@ -7,23 +7,22 @@ function App() {
 
   const [userData, setUserData] = useState(null);
 
-  // const getData = async () => {
-  //   const data = await getUserData("Daeun-Danna-Lee");
-  //   setUserData(data);
+  // const getData = async (name) => {
+  //   try {
+  //     const data = await getUserData(name);
+  //     setUserData(data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   };
   // };
 
-  const getData = async (name) => {
-    try {
-      const data = await getUserData(name);
-      setUserData(data);
-    } catch (e) {
-      console.log(e);
-    };
+  const getData = async () => {
+    const data = await getUserData("Daeun-Danna-Lee");
+    setUserData(data);
   };
 
   useEffect(() => {
-    getData();
-    console.log(userData);
+    getData("Daeun Lee");
   },[]);
 
   return (
