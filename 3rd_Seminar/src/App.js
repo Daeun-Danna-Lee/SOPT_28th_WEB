@@ -3,14 +3,9 @@ import Hello from './Hello';
 
 function App() {
 
-  const userName = "Danna";
-  const sopt = "web part";
-
   return (
     <>
-    {/* name이라는 이름으로 userName을 Hello 컴포넌트에 전달 */}
-      <Hello soptPart={sopt} />  
-      <Hello name={userName} />
+      <Hello />
     </>
   )
 }
