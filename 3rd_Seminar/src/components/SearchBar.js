@@ -1,9 +1,9 @@
 import React, { useImperativeHandle } from 'react';
 import { getUserData } from '../lib/api';
 
-const SearchBar = () => {
+const SearchBar = ({ getData }) => {
 
-    const [userName, setUserName] = React.useState(null);
+    const [userName, setUserName] = React.useState("");
 
     const changeHandeler = event => {
         // 디폴트 동작을 멈주게 하고
@@ -13,7 +13,9 @@ const SearchBar = () => {
     };
 
     const submitHandler = (event) => {
-        
+        event.preventDefault();
+        getData(userName);
+        setUserName("");
     }
 
     return (

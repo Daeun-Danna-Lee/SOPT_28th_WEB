@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from './components/SearchBar';
 import UserCard from './components/UserCard';
+import Result from './components/Result';
 import { getUserData } from './lib/api';
 
 function App() {
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState("");
 
   // const getData = async (name) => {
   //   try {
@@ -16,9 +17,16 @@ function App() {
   //   };
   // };
 
-  const getData = async () => {
-    const data = await getUserData("Daeun-Danna-Lee");
-    setUserData(data);
+  const getData = async (name) => {
+    setUserData({ ...userData, status: "pending" });
+    try {
+      const data = await getUserData(name);
+      if (data === null) throw Error;
+      setUserData({ status: "resolved", data: data });
+    } catch (e) {
+      setUserData({ status: "rejected", data: null });
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -27,8 +35,8 @@ function App() {
 
   return (
     <>
-      <SearchBar />
-      <UserCard userData={userData}/>
+      <SearchBar getData={getData}/>
+      <Result userState={userData}/>
     </>
   )
 }
