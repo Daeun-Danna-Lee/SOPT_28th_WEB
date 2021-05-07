@@ -1,5 +1,34 @@
 import React, { useImperativeHandle } from 'react';
 import { getUserData } from '../lib/api';
+import Styled from "styled-components";
+
+const SearchBarWrap = Styled.div`
+  input {
+    width: 300px;
+    background-color:#28223f;
+    border: 2px solid skyblue;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  input::placeholder {
+    color: white;
+  }
+  input:focus {
+    outline: none;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+`;
 
 const SearchBar = ({ getData }) => {
 
@@ -19,7 +48,9 @@ const SearchBar = ({ getData }) => {
     }
 
     return (
-        <form onSubmit={submitHandler}>
+        <SearchBarWrap>
+            <h2>Github Profile Finder</h2>
+            <form onSubmit={submitHandler}>
             <input 
             type="text" 
             value={userName} 
@@ -27,6 +58,7 @@ const SearchBar = ({ getData }) => {
             placeholder="Github ID를 입력해주세요"
             ></input>
         </form>
+        </SearchBarWrap>
     );
 };
 

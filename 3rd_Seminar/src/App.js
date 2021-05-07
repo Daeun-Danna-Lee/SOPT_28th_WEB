@@ -3,6 +3,15 @@ import SearchBar from './components/SearchBar';
 import UserCard from './components/UserCard';
 import Result from './components/Result';
 import { getUserData } from './lib/api';
+import Styled from "styled-components";
+
+const MainWrap = Styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
 
 function App() {
 
@@ -34,10 +43,10 @@ function App() {
   },[]);
 
   return (
-    <>
+    <MainWrap>
       <SearchBar getData={getData}/>
       <Result userState={userData}/>
-    </>
+    </MainWrap>
   )
 }
 
