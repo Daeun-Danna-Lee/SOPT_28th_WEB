@@ -15,7 +15,10 @@ const MainWrap = Styled.div`
 
 function App() {
 
-  const [userData, setUserData] = useState("");
+  const [userData, setUserData] = useState({
+    status: "idle",
+    data: null,
+  });
 
   // const getData = async (name) => {
   //   try {

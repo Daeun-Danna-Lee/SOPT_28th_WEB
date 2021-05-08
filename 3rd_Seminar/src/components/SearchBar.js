@@ -22,12 +22,6 @@ const SearchBarWrap = Styled.div`
     display: flex;
     justify-content: center;
   }
-  h2 {
-    color: white;
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
 `;
 
 const SearchBar = ({ getData }) => {
@@ -49,15 +43,14 @@ const SearchBar = ({ getData }) => {
 
     return (
         <SearchBarWrap>
-            <h2>Github Profile Finder</h2>
             <form onSubmit={submitHandler}>
-            <input 
-            type="text" 
-            value={userName} 
-            onChange={changeHandeler} 
-            placeholder="Github ID를 입력해주세요"
-            ></input>
-        </form>
+                <input
+                    type="text"
+                    value={userName}
+                    onChange={changeHandeler}
+                    placeholder="Github ID를 입력해주세요"
+                ></input>
+            </form>
         </SearchBarWrap>
     );
 };
