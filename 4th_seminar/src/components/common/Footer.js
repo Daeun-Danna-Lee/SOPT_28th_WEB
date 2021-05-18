@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from "styled-components";
 
-const FooterWrap = Styled.div `
+const FooterWrap = Styled.div`
   .footer {
     height: 91px;
     color: #CEA0E3;
@@ -12,7 +12,13 @@ const FooterWrap = Styled.div `
 `;
 
 const Footer = () => {
-    return <div> Footer Page </div>;
+  return (
+    <FooterWrap>
+      <div className="footer">
+        Copyright&copy; 2021. BE SOPT Web Part. All Rights Reseved.
+      </div>
+    </FooterWrap>
+  );
 };
 
 export default Footer;

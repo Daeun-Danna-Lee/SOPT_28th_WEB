@@ -1,7 +1,8 @@
 import React from 'react';
 import Styled from "styled-components";
+import { withRouter } from 'react-router-dom';
 
-const TitleWrap = Styled.div `
+const TitleWrap = Styled.div`
   .title {
     width: 1200px;
     height: 92px;
@@ -13,8 +14,15 @@ const TitleWrap = Styled.div `
   }
 `;
 
-const Title = () => {
-    return <div> Title Page </div>;
+const Title = ({ location }) => {
+  const title = location.pathname === '/' ? "이번 달 일기" : "오늘의 일기";
+
+
+  return (
+    <TitleWrap>
+      <div className="title">{title}</div>
+    </TitleWrap>
+  );
 };
 
-export default Title;
+export default withRouter(Title);
