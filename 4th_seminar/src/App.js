@@ -8,18 +8,20 @@ import Main from "./pages/Main";
 import Diary from "./pages/Diary";
 
 function App() {
-  return (<>
-    <MainHeader />
-    <Calendar />
-    <Title />
-    <BrowserRouter>
-      <switch>
-        <Route exact path="/" component={Main} />
-        <Route path="/diary/:id" component={Diary} />
-        <Route component={() => <div>404</div>} />
-      </switch>
-    </BrowserRouter>
-  </>
+  return (
+    <>
+      <BrowserRouter>
+        <MainHeader />
+        <Calendar />
+        <Title />
+        <switch>
+          <Route exact path="/" component={Main} />
+          <Route path="/diary/:id" component={Diary} />
+          <Route component={() => <div>404 Page Not Found</div>} />
+        </switch>
+      </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 

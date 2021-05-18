@@ -51,7 +51,7 @@ const CalendarWrap = Styled.div `
 `;
 
 const Calendar = () => {
-    return <div > Calendar Page </div>;
+    return <div > Calendar Page < /div>;
 };
 
 

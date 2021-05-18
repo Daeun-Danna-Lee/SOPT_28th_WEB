@@ -1,7 +1,10 @@
 import React from 'react';
 import Styled from "styled-components";
+import hamburgerBar from '../../assets/hamburgerBar.svg';
+import profileIc from '../../assets/profileIc.svg';
+import { withRouter } from 'react-router-dom';
 
-const MainHeaderWrap = Styled.div `
+const MainHeaderWrap = Styled.div`
   .header {
     display: flex;
     flex-direction: row;
@@ -31,8 +34,15 @@ const MainHeaderWrap = Styled.div `
   }
 `;
 
-const MainHeader = () => {
-    return <div> MainHeader Page </div>;
+const MainHeader = ({ history }) => {
+  return <MainHeaderWrap>
+    <div className="header">
+      <img className="header__menu" src={hamburgerBar} alt="" />
+      <div className="header__title" onClick={() => history.push('/')}>Diary App</div>
+      <img className="header__profile" src={profileIc} alt="" />
+    </div>
+    <div className="header__hr"></div>
+  </MainHeaderWrap>;
 };
 
-export default MainHeader;
+export default withRouter(MainHeader);
